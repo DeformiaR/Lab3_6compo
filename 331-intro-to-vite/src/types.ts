@@ -1,22 +1,25 @@
-export interface Event {
-  id: number
-  category: string
-  title: string
-  description: string
-  location: string
-  date: string
-  time: string
-  petsAllowed: boolean
-  organizer: string
+export interface Airline {
+  _id: string
+  name: string
+  country: string
+  logo: string
+  slogan: string
+  headquarters: string
+  website: string
+  established: string
 }
-export interface Student {
-  id: number
-  category: string
-  title: string
-  description: string
-  location: string
-  date: string
-  time: string
-  petsAllowed: boolean
-  organizer: string
+
+export interface Passenger {
+  _id: string
+  name: string
+  trips: number
+  airline: Airline[]
+}
+
+export interface MessageState {
+  message: string
+}
+
+export interface PassengerState {
+  passenger: Passenger | null
 }
