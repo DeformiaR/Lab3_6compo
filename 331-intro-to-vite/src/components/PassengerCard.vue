@@ -12,6 +12,7 @@ defineProps<{
     :to="{ name: 'passenger-detail-view', params: { _id: passenger._id } }"
   >
     <div class="passenger-card">
+      
       <h2>{{ passenger.name }}</h2>
       <span>Trips: {{ passenger.trips }}</span>
 
