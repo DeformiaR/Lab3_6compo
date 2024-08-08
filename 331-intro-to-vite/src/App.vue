@@ -5,7 +5,6 @@ import { storeToRefs } from 'pinia'
 
 const store = useMessageStore()
 const { message } = storeToRefs(store)
-
 </script>
 
 <template>

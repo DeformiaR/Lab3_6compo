@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PassengerListView from '@/views/PassengerListView.vue'
-import AboutView from '@/views/AboutView.vue'
+import AboutView from '@/views/Aboutview.vue'
 import PassengerDetailView from '@/views/passenger/DetailView.vue'
 import PassengerRegisterView from '@/views/passenger/RegisterView.vue'
 import PassengerEditView from '@/views/passenger/EditView.vue'
@@ -34,7 +34,7 @@ const router = createRouter({
         const passsengerStore = usePassengerStore()
         return PassengerService.getPassenger(_id)
           .then((response) => {
-            
+          
             passsengerStore.setPassenger(response.data)
           })
           .catch((error) => {
