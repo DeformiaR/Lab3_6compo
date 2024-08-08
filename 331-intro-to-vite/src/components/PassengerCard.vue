@@ -12,14 +12,11 @@ defineProps<{
     :to="{ name: 'passenger-detail-view', params: { _id: passenger._id } }"
   >
     <div class="passenger-card">
-      
       <h2>{{ passenger.name }}</h2>
       <span>Trips: {{ passenger.trips }}</span>
 
       <div v-for="airline in passenger.airline" :key="airline._id" class="airline-details">
-
         <h3>{{ airline.name }}</h3>
-
         <p>Country: {{ airline.country }}</p>
       </div>
     </div>

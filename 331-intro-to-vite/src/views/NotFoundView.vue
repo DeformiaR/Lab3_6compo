@@ -2,10 +2,10 @@
 import { defineProps, withDefaults } from 'vue'
 const props = withDefaults(
   defineProps<{
-    resourse: string
+    resource: string
   }>(),
   {
-    resourse: 'page'
+    resource: 'page'
   }
 )
 </script>
