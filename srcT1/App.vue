@@ -26,8 +26,8 @@ const { message } = storeToRefs(store)
 
 <style>
 #layout {
-  font-family: Avenir, Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smooting: antialiased;
   -moz-osx-font-smooting: grayscale;
   text-align: center;
   color: #2c3e50;
@@ -35,6 +35,8 @@ const { message } = storeToRefs(store)
 
 nav {
   padding: 30px;
+  font-weight: bold;
+  color: #2c3e50;
 }
 
 nav a {
@@ -50,6 +52,10 @@ h2 {
   font-size: 20px;
 }
 
+#flashMessage {
+  animation: yellofade 3s ease-in-out;
+}
+
 @keyframes yellofade {
   from {
     background-color: yellow;
@@ -57,9 +63,5 @@ h2 {
   to {
     background-color: transparent;
   }
-}
-
-#flashMessage {
-  animation: yellofade 3s ease-in-out;
 }
 </style>

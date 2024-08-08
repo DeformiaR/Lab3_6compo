@@ -1,14 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PassengerListView from '@/views/PassengerListView.vue'
-import AboutView from '@/views/AboutView.vue'
+import AboutView from '@/views/Aboutview.vue'
 import PassengerDetailView from '@/views/passenger/DetailView.vue'
 import PassengerRegisterView from '@/views/passenger/RegisterView.vue'
 import PassengerEditView from '@/views/passenger/EditView.vue'
 import PassengerLayoutView from '@/views/passenger/LayoutView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import nProgress from 'nprogress'
-import PassengerService from '@/services/PassengerService'
+import PassengerService from '@/Services/PassengerServices'
 import { usePassengerStore } from '@/stores/passenger'
+import type { Passenger } from '@/types'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,11 +35,10 @@ const router = createRouter({
         const _id = to.params._id as string
         const passsengerStore = usePassengerStore()
         return PassengerService.getPassenger(_id)
-          .then((response) => {
-            //need to setup the data for the passenger
+          .then((response: { data: Passenger }) => {
             passsengerStore.setPassenger(response.data)
           })
-          .catch((error) => {
+          .catch((error: { response: { status: number } }) => {
             if (error.response && error.response.status === 404) {
               return {
                 name: '404-resource-view',
