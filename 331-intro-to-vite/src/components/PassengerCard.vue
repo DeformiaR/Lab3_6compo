@@ -16,8 +16,9 @@ defineProps<{
       <span>Trips: {{ passenger.trips }}</span>
 
       <div v-for="airline in passenger.airline" :key="airline._id" class="airline-details">
-        <img :src="airline.logo" alt="Airline Logo" class="airline-logo" />
+
         <h3>{{ airline.name }}</h3>
+
         <p>Country: {{ airline.country }}</p>
       </div>
     </div>
